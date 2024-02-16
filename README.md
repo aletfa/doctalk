@@ -33,7 +33,7 @@ All locally and without taking the advantages of the Cloud. This only to avoid g
 - **LLama model**
 
 	The model used is the one provided by TheBlokeAI on [hubbingface](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main) and in particular the `llama-2-7b-chat.Q4_K_M.gguf` approximately 4 GB.
-This is because in my opinion, it is the best cost (computational) / benefit ratio.
+This because in my opinion, it is the best cost (computational) / benefit ratio.
 
 - **LLamaSharp speedup**
 
