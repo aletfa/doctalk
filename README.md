@@ -1,5 +1,5 @@
 <img src="logo.jpg" alt="drawing" width="400"/>
-A .Net AI Tool to Chat about your Docs.
+A fu.Net, AI tool, to Chat about your Docs.
 
 ## Introduction
 DocTalk is an orchestration of 3 principal components:
@@ -13,9 +13,9 @@ DocTalk is an orchestration of 3 principal components:
 	  - Thanks to LLamaSharp Team for the .Net wrapper [@github](https://github.com/sandrohanea/whisper.net)
   - Microsoft.KernelMemory [@github](https://github.com/microsoft/kernel-memory)
 
-All to generate what is intended to be **an example** of how it is possible **to exploit the advantages of generative AI** in order to start a discussion regarding documentation.
+All to generate what is intended to be **an example** of how it is possible **to exploit the advantages of generative AI** in order to ***start a discussion regarding documentation***.
 
-All locally and without taking advantage of the advantages of the Cloud. This only to avoid getting into difficult problems due to the privacy of the information contained.
+All locally and without taking the advantages of the Cloud. This only to avoid getting into difficult problems due to the privacy of the information contained.
 
 ## Getting started
 
