@@ -106,6 +106,7 @@ internal partial class KernelChatEngine
     public async Task DownloadModelAsync(CancellationToken cancellationToken = default)
     {
         //https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF 
+        //Syntax: <owner>/<model>/<file-name>
         var model = "TheBloke/Llama-2-7B-Chat-GGUF/llama-2-7b-chat.Q4_K_M.gguf";
 
         var split = model.Split('/');
