@@ -1,5 +1,5 @@
 <img src="logo.jpg" alt="drawing" width="400"/>
-A fu.Net, AI tool, to Chat about your Docs.
+A .Net, AI tool, to Chat about your Docs.
 
 ## Introduction
 DocTalk is an orchestration of 3 principal components:
