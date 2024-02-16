@@ -51,3 +51,8 @@ This is because in my opinion, it is the best cost (computational) / benefit rat
  - `LLamaSharp.kernel-memory` always use the `Console` to log.
  
  - Some AI responses may not always be great. The model used is an previous version of LLama. The latest version also uses 47GB models and offers the best performance ([BlokeAI@hubbingface](https://huggingface.co/TheBloke/Llama-2-70B-Chat-GGUF/tree/main))
+
+
+## Special Thanks
+- Martin Evans ([@martinevans](https://github.com/martindevans)) for his quickly support about LLamaSharp.
+- Copilot ([@officialsite](https://copilot.microsoft.com/)) for the logo and the support during the coding sessions.
