@@ -1,6 +1,9 @@
 <img src="logo.jpg" alt="drawing" width="400"/>
 A .Net, AI tool, to Chat about your Docs.
 
+Example: A folder with all your e-books, from here you run a technical chat with the AI.
+Example: A folder with documentation of your next work activity, from here perform an AI-assisted discovery.
+
 ## Introduction
 DocTalk is an orchestration of 3 principal components:
 
