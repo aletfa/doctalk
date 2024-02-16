@@ -1,8 +1,4 @@
-﻿        ____            ______      ____  
-       / __ \____  ____/_  __/___ _/ / /__
-      / / / / __ \/ ___// / / __ `/ / //_/
-     / /_/ / /_/ / /__ / / / /_/ / / ,<   
-    /_____/\____/\___//_/  \__,_/_/_/|_|
+<img src="https://tse3.mm.bing.net/th/id/OIG2.owS_zzTkncba9qsfiJuI?pid=ImgGn" alt="drawing" width="400"/>
 A .Net AI Tool to Chat about your Docs.
 
 ## Introduction
