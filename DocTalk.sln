@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTalk", "DocTalk\DocTalk.csproj", "{77A0D060-078D-4D2B-825F-E87E39FB21EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{11BAE137-8C1C-4875-AF12-66F4FC70B5A7}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77A0D060-078D-4D2B-825F-E87E39FB21EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A0D060-078D-4D2B-825F-E87E39FB21EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A0D060-078D-4D2B-825F-E87E39FB21EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A0D060-078D-4D2B-825F-E87E39FB21EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66494DD5-175C-49EC-855C-135F13C53A83}
+	EndGlobalSection
+EndGlobal
