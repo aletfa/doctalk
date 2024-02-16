@@ -34,17 +34,20 @@ All locally and without taking advantage of the advantages of the Cloud. This on
 ## Tweak
 
 - **LLama model**
-The model used is the one provided by TheBlokeAI on [hubbingface](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main) and in particular the `llama-2-7b-chat.Q4_K_M.gguf` approximately 4 GB.
+
+	The model used is the one provided by TheBlokeAI on [hubbingface](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main) and in particular the `llama-2-7b-chat.Q4_K_M.gguf` approximately 4 GB.
 This is because in my opinion, it is the best cost (computational) / benefit ratio.
 
 - **LLamaSharp speedup**
-For compatibility the project starts with the `LLamaSharp.Backend.Cpu` library which uses the CPU for computation. For better performance, if you have an Nvidia RTX video card you can use the CUDA suite which uses the GPU for calculations instead.
-	1. `Install` the CUDA Toolkit available at [Nvidia](https://developer.nvidia.com/cuda-downloads)
-	2. `Remove` the `LLamaSharp.Backend.Cpu` NuGet package
-	3. `Install` the `LLamaSharp.Backend.Cuda12` package (or 11 for backwards compatibility)
+
+	For compatibility the project starts with the `LLamaSharp.Backend.Cpu` library which uses the CPU for computation. For better performance, if you have an Nvidia RTX video card you can use the CUDA suite which uses the GPU for calculations instead.
+1. `Install` the CUDA Toolkit available at [Nvidia](https://developer.nvidia.com/cuda-downloads)
+2. `Remove` the `LLamaSharp.Backend.Cpu` NuGet package
+3. `Install` the `LLamaSharp.Backend.Cuda12` package (or 11 for backwards compatibility)
 
 - **Move to Cloud**
-`Microsoft.KernelMemory` offers various computing options via Cloud, all of which are more efficient than what can be done locally. However, be careful because  the contents of the documents will be sent to the Cloud for analysis. In many scenarios this is completely safe but it is worth evaluating on a case-by-case basis.
+  
+	`Microsoft.KernelMemory` offers various computing options via Cloud, all of which are more efficient than what can be done locally. However, be careful because  the contents of the documents will be sent to the Cloud for analysis. In many scenarios this is completely safe but it is worth evaluating on a case-by-case basis.
 
 ## Known Issues
 
