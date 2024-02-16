@@ -1,4 +1,4 @@
-<img src="https://tse3.mm.bing.net/th/id/OIG2.owS_zzTkncba9qsfiJuI?pid=ImgGn" alt="drawing" width="400"/>
+<img src="logo.jpg" alt="drawing" width="400"/>
 A .Net AI Tool to Chat about your Docs.
 
 ## Introduction
