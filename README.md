@@ -54,6 +54,6 @@ This is because in my opinion, it is the best cost (computational) / benefit rat
 
 
 ## Special Thanks
-- Martin Evans ([@martinevans](https://github.com/martindevans)) for his quickly support about LLamaSharp.
+- Martin Evans ([@martindevans](https://github.com/martindevans)) for his quickly support about LLamaSharp.
 - Marco Minerva ([@marcominerva](https://github.com/marcominerva)) for his always useful support and for the quality of the code he publishes.
 - Copilot ([@officialsite](https://copilot.microsoft.com/)) for the logo and the support during the coding sessions.
