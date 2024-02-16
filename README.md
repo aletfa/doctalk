@@ -5,6 +5,7 @@ A .Net AI Tool to Chat about your Docs.
 DocTalk is an orchestration of 3 principal components:
 
  - Whisper AI
+ 	 - Thanks to OpenAI Whisper for the algorithm [@officialsite](https://openai.com/research/whisper) 
 	 - Thanks to the WhisperNet team [@github](https://github.com/sandrohanea/whisper.net)
   - LLama AI
 	  - Thanks to Meta LLama2 for the algorithm [@officialsite](https://llama.meta.com/)
