@@ -11,12 +11,12 @@ internal class Program
         originalColor = Console.ForegroundColor;
         Splash();
 
-        WorkingDirectoryDTO docTalk = AcquireWorkingDirectory();
+        IConfiguration config = new ConfigurationBuilder()
+                                    .SetBasePath(RootPath)
+                                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                                    .Build();
 
-        _ = new ConfigurationBuilder()
-            .SetBasePath(RootPath)
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            .Build();
+        WorkingDirectoryDTO docTalk = AcquireWorkingDirectory(config);
 
         //Whisper
         //Find and convert all audio files in .txt documents
@@ -76,15 +76,15 @@ internal class Program
     /// Ask to the user for a valid directory
     /// </summary>
     /// <returns>An object that represent the directory and all file managed by this application within that folder</returns>
-    private static WorkingDirectoryDTO AcquireWorkingDirectory()
+    private static WorkingDirectoryDTO AcquireWorkingDirectory(IConfiguration config)
     {
         var supported = WhisperEngine.SupportedExtensions.Union(KernelChatEngine.SupportedExtensions).Distinct();
         IEnumerable<string>? files;
-        string? directory;
+        string? directory = config.GetValue<string>("WorkingDirectory");
         do
         {
             Console.Write("Directory: ");
-            directory = Console.ReadLine() ?? "";
+            directory ??= Console.ReadLine() ?? "";
             files = Directory.GetFiles(directory).Where(f => supported.Contains(Path.GetExtension(f)?.ToLower()));
             if (!files.Any())
             {
@@ -92,12 +92,12 @@ internal class Program
                 continue;
             }
             Console.WriteLine($"{directory}: ");
+            var whisperables = WhisperEngine.GetWhisperableFiles(files);
             foreach (string file in files)
             {
-                var extension = Path.GetExtension(file)?.ToLower();
                 var fileFriendly = file.Substring(directory.Length + 1);
                 Write($"   * {fileFriendly}");
-                if (WhisperEngine.SupportedExtensions.Contains(extension))
+                if (whisperables.Contains(fileFriendly))
                     Write(" (Whisper)", ConsoleColor.Yellow);
                 Console.WriteLine();
             }

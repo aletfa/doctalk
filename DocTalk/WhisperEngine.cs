@@ -1,4 +1,5 @@
-﻿using Whisper.net;
+﻿using System.IO;
+using Whisper.net;
 using Whisper.net.Ggml;
 
 namespace DocTalk;
@@ -19,6 +20,19 @@ internal class WhisperEngine
     /// </summary>
     public static readonly string[] SupportedExtensions = [".wav", ".mp3", ".mp4"];
 
+    public static IEnumerable<string> GetWhisperableFiles(IEnumerable<string> files)
+    {
+        foreach (string file in files)
+        {
+            var directory = Path.GetDirectoryName(file) ?? "/";
+            var extension = Path.GetExtension(file);
+            var fileFriendly = file.Substring(directory.Length + 1);
+            if (SupportedExtensions.Contains(extension))
+                if (File.Exists($"{Path.GetFileNameWithoutExtension(fileFriendly)}.txt"))
+                    yield return fileFriendly;
+        }
+    }
+
     /// <summary>
     /// Retrive the proper model from huggingface.co
     /// </summary>
@@ -29,6 +43,7 @@ internal class WhisperEngine
     {
         var model = "ggml-base.bin";
         var modelDir = Path.Combine(Program.RootPath, "model");
+        Directory.CreateDirectory(modelDir);
         this.ModelPath = Path.Combine(modelDir, model);
         if (!File.Exists(this.ModelPath))
         {
@@ -61,17 +76,22 @@ internal class WhisperEngine
         //mpeg to wav file conversion
         if (extension == ".mp3" || extension == ".mp4")
         {
-            string wavFile = Path.Combine(directory, $"{fileNameOnly}.wav");
-            await AudioConverter.ConvertMpegToWavAsync(mediaFile, wavFile);
-            mediaFile = wavFile;
+            var wavFile = Path.Combine(directory, $"{fileNameOnly}.wav");
+            if (!File.Exists(wavFile))
+            {
+                await AudioConverter.ConvertMpegToWavAsync(mediaFile, wavFile);
+                mediaFile = wavFile;
+            }
         }
 
-        var txtFile = Path.Combine(directory, $"{fileNameOnly}.txt");
 
-        if (File.Exists(txtFile))
-            return txtFile;
+        var txtFile = new FileInfo(Path.Combine(directory, $"{fileNameOnly}.txt"));
+        if (txtFile.Exists)
+            if (txtFile.Length > 0)
+                return txtFile.FullName;
 
-        File.Create(txtFile);
+        txtFile.Create();
+
         using var factory = WhisperFactory.FromPath(this.ModelPath);
 
         using var processor = factory.CreateBuilder()
@@ -81,8 +101,8 @@ internal class WhisperEngine
         using var audioStream = File.OpenRead(mediaFile);
 
         await foreach (var result in processor.ProcessAsync(audioStream))
-            await File.AppendAllTextAsync(txtFile, result.Text);
+            await File.AppendAllTextAsync(txtFile.FullName, result.Text);
 
-        return txtFile;
+        return txtFile.FullName;
     }
 }

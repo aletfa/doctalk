@@ -113,6 +113,7 @@ internal partial class KernelChatEngine
         var modelName = split.Last();
         var modelOwner = string.Join('/', split.Take(split.Length - 1));
         var modelDir = Path.Combine(Program.RootPath, "model");
+        Directory.CreateDirectory(modelDir);
         this.ModelPath = Path.Combine(modelDir, modelName);
 
         if (File.Exists(this.ModelPath))

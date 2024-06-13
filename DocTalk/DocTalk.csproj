@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LanguageDetection.NETStandard" Version="1.3.1" />
-    <PackageReference Include="LLamaSharp" Version="0.10.0" />
-    <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.10.0" />
-    <PackageReference Include="LLamaSharp.kernel-memory" Version="0.10.0" />
-    <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.28.240212.1" />
+    <PackageReference Include="LLamaSharp" Version="0.13.0" />
+    <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.13.0" />
+    <PackageReference Include="LLamaSharp.kernel-memory" Version="0.13.0" />
+    <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.62.240605.1" />
     <PackageReference Include="Microsoft.ML" Version="3.0.1" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="System.Memory.Data" Version="8.0.0" />
     <PackageReference Include="Whisper.net" Version="1.5.0" />
     <PackageReference Include="Whisper.net.Runtime" Version="1.5.0" />
